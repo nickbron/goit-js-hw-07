@@ -10,17 +10,6 @@ const ingredients = [
 
 const navEl = document.querySelector("#ingredients");
 
-
-
-// ingredients.forEach((elem) => {
- 
-//   const navItemEl = document.createElement("li");
-//    navItemEl.textContent = elem ;
-//    console.log(navItemEl);
-  
-//   navEl.appendChild(navItemEl);
-// });
-
 const elements = ingredients.map(elem => {
    const navItemEl = document.createElement("li");
    navItemEl.textContent = elem ;
