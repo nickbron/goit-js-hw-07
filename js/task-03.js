@@ -15,26 +15,8 @@ const images = [
 
 const galleryRef = document.querySelector("#gallery");
 
-
-const makeGallery = elem => {
-  return elem.map(elem => {
-    const navItemEl = galleryRef.insertAdjacentHTML(
-    'afterbegin',
-    `<li class ="img"><img src=${elem.url} alt="${elem.alt}"  ></li>`
-  );
-     return navItemEl;
-  });
+const makeGallery = ({ url, alt }) => {
+  return `<li class = "img"> <img src = '${url}' alt = '${alt}'</li>`;
 };
 
-makeGallery(images);
-
-
-//<li class="item"> <img src="./images/img1.jpg" alt="img" > </li>
-
-// images.forEach((image) => {
-//   galleryRef.insertAdjacentHTML(
-//     'afterbegin',
-//     `<li ><img src=${image.url} alt="${image.alt}"  ></li>`
-//   );
-// });
-
+ galleryRef.insertAdjacentHTML('afterbegin', [...images.map(makeGallery)]);
