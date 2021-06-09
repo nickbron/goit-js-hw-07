@@ -19,4 +19,4 @@ const makeGallery = ({ url, alt }) => {
   return `<li class = "img"> <img src = '${url}' alt = '${alt}'</li>`;
 };
 
- galleryRef.insertAdjacentHTML('afterbegin', [...images.map(makeGallery)]);
+ galleryRef.insertAdjacentHTML('afterbegin', [...images.map(makeGallery)].join(""));
