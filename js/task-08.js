@@ -16,6 +16,7 @@ function renderBoxes() {
 function destroyBoxes() {
   boxes.innerHTML = '';
   inputBoxRef.value = '';
+  size = 30;
  
 }
 
