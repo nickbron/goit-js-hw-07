@@ -1,36 +1,26 @@
-const refs = {
-    input:document.getElementById("validation-input")
-};
+const input = document.getElementById("validation-input");
+const expectedLength = Number(input.dataset.length);
 
-refs.input.addEventListener("blur", onInputBlur);
+input.addEventListener("blur", onInputBlur);
 
-function addClassAdd(value){
-    refs.input.classList.add(value);
-}
-
-function addClassRemove(value){
-    refs.input.classList.remove (value);
-}
-
-// function addClass(change, value)
-// {
-//     refs.input.classList.$change(value);
-// }
-
-
-function onInputBlur(event) {
-    if (Number(refs.input.dataset.length) === event.currentTarget.value.length) {
-         addClassRemove("invalid");
-         addClassAdd("valid");
-        // addClass(remove, "invalid");
-       //  addClass("add", "valid");
-        
+function onInputBlur() {
+    const isValid = expectedLength === input.value.length;
+    if (isValid) {
+        setValidStateClasses();
+    } else {
+        setInvalidStateClasses();
     }
-    else {
-         addClassAdd("invalid");
-        addClassRemove("valid");
-       // addClass(add, "invalid");
-       // addClass("remove", "valid");
-        
-   }
 }
+
+function setValidStateClasses() {
+    input.classList.remove('invalid');
+    input.classList.add('valid');
+}
+
+function setInvalidStateClasses() {
+    input.classList.remove('valid');
+    input.classList.add('invalid');
+}
+
+// function addClass(method, value) {input.classList[method](value); }
+
