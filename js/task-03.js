@@ -20,3 +20,7 @@ const makeGallery = ({ url, alt }) => {
 };
 
  galleryRef.insertAdjacentHTML('afterbegin', [...images.map(makeGallery)].join(""));
+
+
+
+
