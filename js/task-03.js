@@ -19,4 +19,13 @@ const makeGallery = ({ url, alt }) => {
   return `<li class = "img"> <img src = '${url}' alt = '${alt}'</li>`;
 };
 
+<<<<<<< Updated upstream
  galleryRef.insertAdjacentHTML('afterbegin', [...images.map(makeGallery)]);
+=======
+
+
+makeGallery(images);
+
+
+
+>>>>>>> Stashed changes
