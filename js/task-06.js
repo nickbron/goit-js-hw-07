@@ -1,15 +1,36 @@
 const refs = {
-    input:document.getElementById("validation-input"),
-    nameLabel: document.querySelector("#name-output"),
+    input:document.getElementById("validation-input")
 };
 
-refs.input.addEventListener("blur", onIputBlur);
+refs.input.addEventListener("blur", onInputBlur);
 
-function onIputBlur(event) {
+function addClassAdd(value){
+    refs.input.classList.add(value);
+}
+
+function addClassRemove(value){
+    refs.input.classList.remove (value);
+}
+
+// function addClass(change, value)
+// {
+//     refs.input.classList.$change(value);
+// }
+
+
+function onInputBlur(event) {
     if (Number(refs.input.dataset.length) === event.currentTarget.value.length) {
-        refs.input.classList.remove("invalid");
-        refs.input.classList.add("valid"); }
+         addClassRemove("invalid");
+         addClassAdd("valid");
+        // addClass(remove, "invalid");
+       //  addClass("add", "valid");
+        
+    }
     else {
-        refs.input.classList.add("invalid");
-        refs.input.classList.remove("valid");}
+         addClassAdd("invalid");
+        addClassRemove("valid");
+       // addClass(add, "invalid");
+       // addClass("remove", "valid");
+        
+   }
 }
